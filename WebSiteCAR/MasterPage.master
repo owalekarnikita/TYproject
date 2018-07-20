@@ -1,0 +1,260 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   
+   
+   <title> Home </title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"/>
+<meta name="keywords" content="Carmotive Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<!--// css -->
+<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
+<link href="css/owl.theme.css" rel="stylesheet">
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href="/../fonts.googleapis.com/css?family=Cinzel:400,700,900" rel="stylesheet">
+<link href="/../fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<link href='/../fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+        });
+    });
+</script> 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#owl-demo").owlCarousel({
+
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            autoPlay: true,
+            items: 4,
+            itemsDesktop: [640, 5],
+            itemsDesktopSmall: [414, 4]
+
+        });
+
+    }); 
+</script>
+
+
+
+
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<form id="Form1" runat="server">
+<!-- banner -->
+	<div class="banner jarallax">
+		<div class="banner-dot">
+			
+				<div class="container">
+					<div class="header-top-left">
+						<p><i class="fa fa-home" aria-hidden="true"></i> 1st Street , Mumbai city    
+					    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 7021867641</p>
+                        </div>
+					<div class="header-top-right">
+						  <%if (Session["username"] == null)
+                          { %>
+                           <li><a href="login.aspx" 
+                                   style="color: #FF0000; font-weight: bold; font-style: normal; font-family: Cambria; font-size:24;">Login</a></li>
+                          <%}
+                           else
+                            { %>
+                  <B style="color:Red; font-size:24;"> Welcome <%=Session["username"]%></B>
+
+                       <li><a href="logout.aspx" 
+                                   style="font-size: medium; font-weight: bold; font-style: normal; color: #FFFFFF; font-size:24;"> Logout</a></li>
+                           <%} %>
+					</div>
+	
+			</div>
+			<div class="header">
+				<div class="container"> 
+					<div class="header-left">
+						<div class="w3layouts-logo">
+							<h1>
+								<a href="index.aspx">Carmotive</a>
+							</h1>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+
+
+
+
+
+               <div class="header-right">
+				<div class="container">
+						<div class="top-nav">
+							<nav class="navbar navbar-default">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+								<!--navbar-header-->
+								<div class="collapse navbar-collapse" id="Div1">
+									<ul class="nav navbar-nav navbar-right">
+										<li><a href="index.aspx" >Home</a></li>
+										<li><a href="about.aspx" >About</a></li>
+										<li><a href="gallery.aspx">Gallery</a></li>
+                                        <li><a href="category.aspx">Book a Ride</a></li>
+                                         <li><a href="Feedback.aspx">feedback</a></li>
+										<li><a href="contact.aspx">Contact Us</a></li>
+									    
+                                          <li><a href="tandc.aspx">Terms and Condition</a></li>
+                                           <%if (Session["email"] == null)
+                          { %>
+						<li><a href="login.aspx">Login</a></li>
+						<li><a href="signup.aspx">Signup</a></li>
+                        <%}
+                          else
+                          { %>
+                        <li><a href="logout.aspx">Log Out</a></li>
+                        <%} %>
+
+                                    </ul>	
+									<div class="clearfix"> </div>	
+								</div>
+							</nav>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- //banner -->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- footer -->
+    <br />
+	<div class="w3-agile-footer">
+		<div class="container">
+			<div class="footer-grids">
+				<div class="col-md-4 footer-grid">
+					<div class="footer-grid-heading">
+						<h4>Address</h4>
+					</div>
+					<div class="footer-grid-info">
+						<p>ORIX Auto Infrastructure Services Limited 
+							<span>Plot No - 94, Marol Co-op Industrial Estate,</span>
+                            <span>Andheri-Kurla Road, Andheri(E), Mumbai - 400059 </span>
+						</p>
+						<p class="phone">Phone : +91 7021867641
+							<span>Email : <a href="mailto:nikitao8984@gmail.com">nikitao8984@gmail.com</a></span>
+							<span>FAX : <a href="mailto:nikitao8984@gmail.com">+91 9821499455</a></span>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-5 footer-grid">
+					<div class="footer-grid-heading">
+						<h4>Navigation</h4>
+					</div>
+					<div class="footer-grid-info">
+						<ul>
+							<li><a href="index.aspx">Home</a></li>
+							<li><a href="about.aspx">About</a></li>
+							<li><a href="gallery.aspx">Gallery</a></li>
+							<li><a href="contact.aspx">Contact us</a></li>
+                            <li><a href="tandc.aspx">Terms and Condititon</a></li>
+                            <li><a href="Logout.aspx">Logout</a></li>
+						</ul>
+                       
+					</div>
+				</div>
+				<!--<div class="col-md-3 footer-grid">
+					<div class="footer-grid-heading">
+						<h4>Newsletter</h4>
+					</div>
+					<div class="agile-footer-grid">
+						<ul class="w3agile_footer_grid_list">
+							<li>Ut aut reiciendis voluptatibus maiores <a href="#">http://example.com</a> alias, ut aut reiciendis.
+								<span><i class="fa fa-twitter" aria-hidden="true"></i> 02 days ago</span></li>
+							<li>Itaque earum rerum hic tenetur a sapiente delectus <a href="#">http://example.com</a><span><i class="fa fa-twitter" aria-hidden="true"></i> 03 days ago</span></li>
+						</ul>
+					</div>
+				</div>-->
+				<div class="col-md-3 footer-grid">
+					<div class="footer-grid-heading">
+						<h4>Follow Us</h4>
+					</div>
+					<div class="social">
+						<ul>
+							<li><a href="../https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="../https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-rss"></i></a></li>
+							<li><a href="#"><i class="fa fa-vk"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+            <hr />
+			<div class="agileits-w3layouts-copyright">
+				<p>© 2018 Carmotive . All Rights Reserved | Design by <a href="http://w3layouts.com/"> NIKITA </a> </p>
+			</div>
+		</div>
+	</div>
+    </form>
+	<!-- //footer -->
+	<script src="js/jarallax.js"></script>
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript">
+	    /* init Jarallax */
+	    $('.jarallax').jarallax({
+	        speed: 0.5,
+	        imgWidth: 1366,
+	        imgHeight: 768
+	    })
+	</script>
+
+	<script src="js/responsiveslides.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        /*
+	        var defaults = {
+	        containerID: 'toTop', // fading element id
+	        containerHoverID: 'toTopHover', // fading element hover id
+	        scrollSpeed: 1200,
+	        easingType: 'linear' 
+	        };
+	        */
+
+	        $().UItoTop({ easingType: 'easeOutQuart' });
+
+	    });
+	</script>
+<!-- //here ends scrolling icon -->
+<script src="js/owl.carousel.js"></script>  
+
+
+</body>
+</html>
